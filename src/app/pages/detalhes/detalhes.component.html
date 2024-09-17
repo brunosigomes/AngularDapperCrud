@@ -1,0 +1,37 @@
+<div class="container mt-5 mb-5">
+  <h1>Detalhes do Usuário </h1>
+  <form>
+    <div class="mt-3">
+      <label for="" class="form-label">Nome Completo </label>
+      <input type="text" class="form-control" placeholder="Insira o Nome Completo" value="{{usuario.nomeCompleto}}" disabled>
+    </div>
+    <div class="mt-3">
+      <label for="" class="form-label">Email </label>
+      <input type="text" class="form-control" placeholder="Insira o Email" value="{{usuario.email}}" disabled>
+    </div>
+    <div class="mt-3">
+      <label for="" class="form-label">Cargo </label>
+      <input type="text" class="form-control" placeholder="Insira o Cargo" value="{{usuario.cargo}}" disabled>
+    </div>
+    <div class="mt-3">
+      <label for="" class="form-label">Salário </label>
+      <input type="number" step="any" class="form-control" placeholder="Insira o Salário" value="{{usuario.salario}}" disabled>
+    </div>
+    <div class="mt-3">
+      <label for="" class="form-label">CPF </label>
+      <input type="text" class="form-control" placeholder="Insira o CPF" value="{{usuario.cpf}}" disabled>
+    </div>
+    <div class="mt-3">
+      <label for="" class="form-label">Situação </label>
+      <input type="text" class="form-control" placeholder="Insira a Situação" value="{{usuario.situacao}}" disabled>
+    </div>
+    <div class="mt-3">
+      <label for="" class="form-label">Senha</label>
+      <input type="text" class="form-control" placeholder="Insira uma Senha" value="{{usuario.senha}}" disabled>
+    </div>
+
+    <div class="d-flex mt-3">
+      <a [routerLink]="['/']" class="btn btn-info w-25 mx-1">Voltar</a>
+    </div>
+  </form>
+</div>

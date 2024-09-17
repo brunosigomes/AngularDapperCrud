@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between">
+    <h1>CRUD Usuários</h1>
+    <button class="btn btn-success w-25 mb-5" [routerLink]="['/cadastro']" routerLinkActive="router-link-active" >Cadastrar novo Usuário</button>
+  </div>
+  <div>
+    <input type="text" class="form-control" type="text" placeholder="Qual usuário deseja buscar?" (input)="search($event)">
+  </div>
+
+  <table class="table table-hover table-bordered mt-5">
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Nome Completo</th>
+        <th>Email</th>
+        <th>Cargo</th>
+        <th>Salário</th>
+        <th>Situação</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @if(usuarios.length > 0) {
+        @for (usuario of usuarios; track $index) {
+          <tr>
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.nomeCompleto}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.cargo}}</td>
+            <td>{{usuario.salario.toFixed(2).replace('.', ',')}}</td>
+            <td>{{usuario.situacao == true ? "Ativo" : "Inativo"}}</td>
+            <td>
+              <button class="btn btn-warning mx-2" [routerLink]="['/edicao', usuario.id]">Editar</button>
+              <button class="btn btn-info mx-2" [routerLink]="['/detalhes', usuario.id]">Detalhes</button>
+              <button class="btn btn-danger mx-2" (click)="deletar(usuario.id)">Excluir</button>
+            </td>
+          </tr>
+        }
+      } @else {
+        <tr class="text-center">
+          <td colspan="7">Nenhum usuário encontrado!</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
