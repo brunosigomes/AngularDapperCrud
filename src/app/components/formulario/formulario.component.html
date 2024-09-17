@@ -23,9 +23,9 @@
     </div>
     <div class="mt-3">
       <label for="" class="form-label">Situação </label>
-      <select class="form-select" formControlName="situacao">
-        <option value="true" selected>Ativo</option>
-        <option value="false">Inativo</option>
+      <select class="form-select" formControlName="situacao" (change)="onSituacaoChange($event)">
+        <option [value]="true" selected>Ativo</option>
+        <option [value]="false">Inativo</option>
       </select>
     </div>
     <div class="mt-3">

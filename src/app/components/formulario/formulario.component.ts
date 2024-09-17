@@ -31,6 +31,12 @@ export class FormularioComponent implements OnInit {
     });
   }
 
+  onSituacaoChange(event: Event): void {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    const booleanValue = selectedValue === 'true';
+    this.usuarioForm.get('situacao')!.setValue(booleanValue); // Atualiza o controle do formulário
+  }
+
   submit() {
     this.onSubmit.emit(this.usuarioForm.value)
   }
